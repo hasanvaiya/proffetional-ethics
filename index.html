@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Professional Ethics | 3D Premium Exam Prep</title>
+    <title>Professional Ethics | 3D + Full Answers + বাংলা</title>
     <!-- Google Fonts + Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -13,387 +13,383 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Inter', 'Hind Siliguri', sans-serif;
             background: #0a0f1c;
-            color: #eef4ff;
+            color: #f0f6ff;
             line-height: 1.5;
             overflow-x: hidden;
         }
-
-        /* 3D space + dynamic lighting */
-        .scene-3d {
+        /* 3D background + moving light */
+        .bg-3d {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -2;
-            background: radial-gradient(circle at 20% 30%, #0b1120, #03060c);
+            background: radial-gradient(circle at 30% 20%, #0d1425, #03060c);
         }
-        .lighting {
+        .light-ray {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(80, 150, 255, 0.15) 0%, rgba(0,0,0,0) 60%);
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(70, 160, 255, 0.2), rgba(0,0,0,0) 70%);
             pointer-events: none;
-            transition: background 0.1s ease;
+            transition: background 0.08s;
         }
-        /* floating orbs */
-        .orb {
+        .floating-orb {
             position: fixed;
             border-radius: 50%;
-            filter: blur(60px);
-            opacity: 0.3;
+            filter: blur(70px);
+            opacity: 0.25;
             z-index: -1;
-            animation: floatOrb 18s infinite alternate;
+            animation: drift 22s infinite alternate;
         }
-        .orb1 { width: 40vw; height: 40vw; background: #1e3a8a; top: -10%; left: -10%; }
-        .orb2 { width: 50vw; height: 50vw; background: #2b6e9e; bottom: -20%; right: -10%; animation-duration: 25s; }
-        @keyframes floatOrb {
-            0% { transform: translate(0, 0) scale(1); opacity: 0.2; }
-            100% { transform: translate(5%, 8%) scale(1.2); opacity: 0.4; }
+        .orb1 { width: 45vw; height: 45vw; background: #1d4e89; top: -15%; left: -10%; }
+        .orb2 { width: 55vw; height: 55vw; background: #2c6e9e; bottom: -20%; right: -15%; animation-duration: 28s; }
+        @keyframes drift {
+            0% { transform: translate(0,0) scale(1); opacity: 0.2; }
+            100% { transform: translate(6%, 8%) scale(1.2); opacity: 0.35; }
         }
-
         .container {
-            max-width: 1400px;
+            max-width: 1350px;
             margin: 0 auto;
             padding: 1.5rem 2rem;
             position: relative;
-            perspective: 1200px;
         }
-
-        /* Header 3D */
+        /* header animated */
         .hero {
             text-align: center;
-            margin-bottom: 2.8rem;
-            transform-style: preserve-3d;
-            animation: floatHeader 1s ease-out;
+            margin-bottom: 2.5rem;
+            animation: floatDown 0.9s cubic-bezier(0.2,0.9,0.4,1.1);
         }
-        @keyframes floatHeader {
-            0% { opacity: 0; transform: translateY(-40px) rotateX(-10deg); }
+        @keyframes floatDown {
+            0% { opacity: 0; transform: translateY(-45px) rotateX(-10deg); }
             100% { opacity: 1; transform: translateY(0) rotateX(0); }
         }
         .hero h1 {
-            font-size: 3.2rem;
+            font-size: 3rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #fff, #7ab3c8, #3c9eff);
+            background: linear-gradient(135deg, #ffffff, #7ab3d0, #4aa5ff);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            text-shadow: 0 0 20px rgba(60,158,255,0.3);
+            text-shadow: 0 0 15px rgba(74,165,255,0.3);
         }
-        .hero .badge {
-            background: rgba(255,255,255,0.1);
+        .hero-badge {
+            background: rgba(255,255,255,0.08);
             backdrop-filter: blur(12px);
             display: inline-block;
-            padding: 0.4rem 1.5rem;
+            padding: 0.4rem 1.6rem;
             border-radius: 60px;
-            font-size: 0.9rem;
-            font-weight: 500;
+            font-size: 0.85rem;
             margin-top: 0.8rem;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(100,180,250,0.4);
         }
-
-        /* 3D Tab Navigation */
+        /* tabs 3d */
         .tabs-nav {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            transform-style: preserve-3d;
+            gap: 0.8rem;
+            margin-bottom: 2.5rem;
         }
         .tab-btn {
-            background: rgba(20, 30, 45, 0.7);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(100, 180, 250, 0.3);
-            padding: 0.8rem 1.8rem;
-            font-size: 1rem;
+            background: rgba(20, 30, 48, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(80, 150, 230, 0.4);
+            padding: 0.7rem 1.6rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            font-family: inherit;
             border-radius: 50px;
             cursor: pointer;
-            transition: all 0.25s;
-            color: #ccdeff;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            transform: translateZ(5px);
+            transition: 0.2s;
+            color: #cce6ff;
+            font-family: inherit;
+            transform: translateZ(4px);
         }
         .tab-btn i { margin-right: 8px; }
         .tab-btn.active {
             background: #1f6fb0;
             color: white;
             border-color: #8ac4ff;
-            box-shadow: 0 0 20px rgba(31,111,176,0.6), 0 10px 20px rgba(0,0,0,0.2);
-            transform: translateZ(12px) scale(1.02);
+            box-shadow: 0 0 16px rgba(31,111,176,0.7);
+            transform: translateZ(10px) scale(1.02);
         }
-        .tab-btn:hover:not(.active) {
-            background: rgba(50, 80, 120, 0.8);
-            transform: translateZ(8px);
-            border-color: #5ca9f0;
+        .tab-btn:hover {
+            background: #2a6a9e;
+            transform: translateZ(6px);
         }
-
-        /* 3D Cards with lighting and tilt */
-        .card-3d {
-            background: rgba(18, 28, 40, 0.65);
+        /* 3D card with tilt + glass */
+        .card-premium {
+            background: rgba(18, 28, 45, 0.7);
             backdrop-filter: blur(14px);
             border-radius: 2rem;
             padding: 1.8rem;
             margin-bottom: 2rem;
-            border: 1px solid rgba(100, 180, 250, 0.25);
-            box-shadow: 0 25px 45px -12px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
-            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border: 1px solid rgba(100, 180, 250, 0.3);
+            transition: all 0.3s ease;
             transform-style: preserve-3d;
-            transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+            transform: perspective(1200px) rotateX(0deg) rotateY(0deg);
         }
-        .card-3d:hover {
-            transform: perspective(1000px) rotateX(2deg) rotateY(2deg) translateY(-8px);
-            border-color: rgba(100, 200, 255, 0.6);
-            box-shadow: 0 30px 55px -15px black, 0 0 0 1px rgba(70,170,255,0.3);
-            background: rgba(22, 34, 50, 0.75);
+        .card-premium:hover {
+            transform: perspective(1200px) rotateX(2deg) rotateY(2deg) translateY(-6px);
+            border-color: rgba(80, 180, 255, 0.7);
+            box-shadow: 0 25px 40px -12px black;
+            background: rgba(22, 34, 55, 0.8);
         }
-
-        .card-3d h2 {
+        .card-premium h2 {
             font-size: 1.9rem;
             border-left: 6px solid #3c9eff;
             padding-left: 1rem;
             margin-bottom: 1.2rem;
-            background: linear-gradient(120deg, #fff, #b8dcff);
+            background: linear-gradient(120deg, #fff, #b0d4ff);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
         }
-        .card-3d h3 {
+        .card-premium h3 {
             font-size: 1.4rem;
-            margin: 1.5rem 0 0.8rem 0;
-            color: #9acdff;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            margin: 1.2rem 0 0.6rem 0;
+            color: #9aceff;
         }
         .grid-2 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.2rem;
         }
-        .info-card {
-            background: rgba(10, 20, 35, 0.6);
+        .info-block {
+            background: rgba(0, 0, 0, 0.35);
             border-radius: 1.2rem;
             padding: 1rem;
             border-left: 3px solid #3c9eff;
         }
-        .bilingual-box {
-            background: rgba(0, 0, 0, 0.3);
+        .bilingual {
+            background: rgba(0, 20, 40, 0.5);
             border-radius: 1rem;
             padding: 1rem;
             margin-top: 1rem;
-            border: 1px solid rgba(70, 130, 200, 0.4);
         }
-        .eng {
-            color: #f0fcff;
+        .eng-text {
             font-weight: 500;
+            color: #fff;
         }
-        .bn {
-            color: #c7e6ff;
-            font-size: 0.9rem;
+        .bn-text {
+            font-family: 'Hind Siliguri', sans-serif;
+            color: #cae3ff;
+            font-size: 0.92rem;
             margin-top: 0.5rem;
             padding-top: 0.5rem;
-            border-top: 1px dashed #3f6e9e;
-            font-family: 'Hind Siliguri', sans-serif;
+            border-top: 1px dashed #3e749b;
         }
-        .example-glow {
-            background: linear-gradient(135deg, rgba(50, 100, 150, 0.3), rgba(20, 40, 70, 0.5));
-            border-left: 5px solid #ffb347;
+        .example-3d {
+            background: linear-gradient(125deg, rgba(50,110,160,0.2), rgba(20,40,70,0.5));
+            border-left: 5px solid #ffaa44;
             border-radius: 1rem;
             padding: 1rem;
+            margin: 1rem 0;
         }
         .list-styled {
-            padding-left: 1.4rem;
+            padding-left: 1.5rem;
             margin: 0.7rem 0;
         }
-        .footer-credit {
+        .footer {
             text-align: center;
-            margin-top: 2.5rem;
+            margin-top: 2rem;
             padding: 1.2rem;
-            background: rgba(0,0,0,0.4);
-            backdrop-filter: blur(8px);
+            background: rgba(0,0,0,0.45);
+            backdrop-filter: blur(12px);
             border-radius: 2rem;
-            font-size: 0.9rem;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        @media (max-width: 760px) {
-            .container { padding: 1rem; }
-            .hero h1 { font-size: 2rem; }
-            .tab-btn { padding: 0.5rem 1rem; font-size: 0.8rem; }
-            .card-3d { padding: 1.2rem; }
-            .card-3d h2 { font-size: 1.4rem; }
+            font-size: 0.85rem;
         }
         .tab-content {
             display: none;
-            animation: fadeInUp 0.55s ease;
+            animation: fadeUp 0.5s ease;
         }
         .tab-content.active {
             display: block;
         }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(18px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        i.fa, i.far, i.fas {
-            margin-right: 6px;
+        @media (max-width: 760px) {
+            .container { padding: 1rem; }
+            .hero h1 { font-size: 2rem; }
+            .tab-btn { padding: 0.45rem 1rem; font-size: 0.75rem; }
+            .card-premium h2 { font-size: 1.5rem; }
         }
+        i.fa, i.far, i.fas { margin-right: 6px; }
+        hr { margin: 1rem 0; border-color: #2d577b; }
     </style>
 </head>
 <body>
-<div class="scene-3d"></div>
-<div class="lighting" id="lighting"></div>
-<div class="orb orb1"></div>
-<div class="orb orb2"></div>
+<div class="bg-3d"></div>
+<div class="light-ray" id="lightRay"></div>
+<div class="floating-orb orb1"></div>
+<div class="floating-orb orb2"></div>
 
 <div class="container">
     <div class="hero">
-        <h1><i class="fas fa-cube"></i> Professional Ethics <span style="font-size: 1.8rem;">| 3D Exam Suite</span></h1>
-        <div class="badge"><i class="fas fa-language"></i> English + বাংলা | 100% Exam Preparation | Developer: Hasan Ahmed Sojib</div>
-        <p style="margin-top: 0.6rem;">Conflict of Interest • Whistleblowing • IP & Copyright • Ethical Theories • Cyber Crimes</p>
+        <h1><i class="fas fa-cube"></i> Professional Ethics <span style="font-size:1.8rem;">| 3D Exam Prep</span></h1>
+        <div class="hero-badge"><i class="fas fa-language"></i> English + বাংলা | Full Long Answers | Developer: Hasan Ahmed Sojib</div>
+        <p style="margin-top: 0.5rem;">CoI · Whistleblowing · IP & Copyright · Utilitarianism · Relativism · Cyber Crime</p>
     </div>
 
     <div class="tabs-nav">
-        <button class="tab-btn active" data-tab="tab1"><i class="fas fa-handshake-slash"></i> CoI</button>
+        <button class="tab-btn active" data-tab="tab1"><i class="fas fa-handshake-slash"></i> Conflict of Interest</button>
         <button class="tab-btn" data-tab="tab2"><i class="fas fa-bullhorn"></i> Whistleblowing</button>
-        <button class="tab-btn" data-tab="tab3"><i class="far fa-copyright"></i> IP & Copyright</button>
+        <button class="tab-btn" data-tab="tab3"><i class="far fa-copyright"></i> Intellectual Property</button>
         <button class="tab-btn" data-tab="tab4"><i class="fas fa-brain"></i> Ethical Theories</button>
         <button class="tab-btn" data-tab="tab5"><i class="fas fa-laptop-code"></i> Computer Crimes</button>
     </div>
 
-    <!-- ========= TAB 1 : Conflict of Interest ========= -->
+    <!-- TAB 1: Conflict of Interest (Full long answer + Bangla) -->
     <div id="tab1" class="tab-content active">
-        <div class="card-3d">
+        <div class="card-premium">
             <h2><i class="fas fa-balance-scale"></i> Conflict of Interest (CoI)</h2>
-            <div class="eng"><strong>Definition:</strong> A Conflict of Interest occurs when personal interests clash with professional duties, risking biased decisions.</div>
-            <div class="bn"><strong>বাংলা:</strong> স্বার্থের দ্বন্দ্ব (CoI) তখন ঘটে যখন ব্যক্তিগত স্বার্থ পেশাগত দায়িত্বের সাথে সংঘর্ষে লিপ্ত হয়, যা পক্ষপাতদুষ্ট সিদ্ধান্তের ঝুঁকি তৈরি করে।</div>
-            
-            <h3><i class="fas fa-tags"></i> Types of CoI</h3>
+            <div class="eng-text"><strong>Definition (Long Answer):</strong> A Conflict of Interest (CoI) is a situation where an individual's personal interests — whether financial, family, or friendship — clash with their professional obligations. This creates a significant risk that the person may make biased or unfair decisions instead of acting in the best interest of their employer or the public. CoI undermines trust and objectivity.</div>
+            <div class="bn-text"><strong>বাংলা (সবিস্তরে):</strong> স্বার্থের সংঘাত (CoI) তখন ঘটে যখন কোনো ব্যক্তির ব্যক্তিগত স্বার্থ (টাকা, পরিবার, বন্ধুত্ব) তার পেশাগত দায়িত্বের সাথে সংঘর্ষে লিপ্ত হয়। এর ফলে পক্ষপাতদুষ্ট সিদ্ধান্ত নেওয়ার আশঙ্কা তৈরি হয়, যা প্রতিষ্ঠানের স্বার্থের পরিপন্থী। এটি পেশাদারিত্ব ও বিশ্বাস নষ্ট করে।</div>
+
+            <h3><i class="fas fa-tags"></i> Three Types of CoI with Examples</h3>
             <div class="grid-2">
-                <div class="info-card"><strong>⚡ Actual CoI (বাস্তব)</strong><br>Immediate conflict. Example: Manager hires unqualified relative.<br><span class="bn">উদা: ম্যানেজার নিজের অযোগ্য ভাইকে চাকরি দেয়।</span></div>
-                <div class="info-card"><strong>⚠️ Potential CoI (সম্ভাব্য)</strong><br>Future risk. Buying rival's shares.<br><span class="bn">প্রতিদ্বন্দ্বী কোম্পানির শেয়ার কেনা ভবিষ্যতে সংঘাত তৈরি করতে পারে।</span></div>
-                <div class="info-card"><strong>👁️ Apparent CoI (আপাত)</strong><br>Looks like conflict even if fair. Promoting a friend who deserves it.<br><span class="bn">ন্যায্য হলেও অন্যরা পক্ষপাতিত্ব ভাবতে পারে।</span></div>
+                <div class="info-block"><strong>⚡ Actual CoI (বাস্তব সংঘাত)</strong><br>Conflict exists now. Example: A hiring manager selects his own brother for a job even though another candidate is more qualified.<br><span class="bn-text" style="border: none; margin-top: 4px;">উদা: ম্যানেজার নিজের ভাইকে যোগ্য প্রার্থীর চেয়ে চাকরি দিলে তা বাস্তব CoI।</span></div>
+                <div class="info-block"><strong>⚠️ Potential CoI (সম্ভাব্য সংঘাত)</strong><br>No conflict yet, but could arise. Example: An employee buys shares in a rival company. Today fine, tomorrow problematic.<br><span class="bn-text" style="border: none;">উদা: একজন কর্মী প্রতিদ্বন্দ্বী কোম্পানির শেয়ার কেনেন — বর্তমানে সমস্যা না থাকলেও ভবিষ্যতে সংঘাত তৈরি করতে পারে।</span></div>
+                <div class="info-block"><strong>👁️ Apparent CoI (আপাত সংঘাত)</strong><br>Looks like conflict even if none exists. Example: A manager promotes his best friend who truly deserved it. Others suspect favoritism.<br><span class="bn-text" style="border: none;">উদা: ম্যানেজার প্রকৃত যোগ্য বন্ধুকে পদোন্নতি দিলেও অন্যরা পক্ষপাতিত্ব সন্দেহ করে — এটি আপাত CoI।</span></div>
             </div>
 
-            <h3><i class="fas fa-moon"></i> CoI vs Moonlighting</h3>
-            <div class="eng">Moonlighting = second job after hours. It becomes CoI when harming primary job (competitor, exhaustion, misuse of data).</div>
-            <div class="bn">মুনলাইটিং মানে মূল কাজের পর দ্বিতীয় চাকরি। এটি CoI-তে পরিণত হয় যখন মূল কাজের ক্ষতি করে (প্রতিযোগী, ক্লান্তি, তথ্য ফাঁস)।</div>
-            <div class="example-glow"><i class="fas fa-lightbulb"></i> <strong>Example:</strong> A bank officer working nights for a rival bank — actual conflict.<br><span class="bn">একজন ব্যাংক কর্মকর্তা রাতে প্রতিদ্বন্দ্বী ব্যাংকে কাজ করলে তা সরাসরি স্বার্থের সংঘাত।</span></div>
+            <h3><i class="fas fa-moon"></i> CoI vs Moonlighting (Detailed)</h3>
+            <div class="eng-text"><strong>Moonlighting</strong> means holding a second job after regular working hours. It is generally ethical unless it harms the primary employer. Moonlighting becomes a Conflict of Interest when: (a) the second job is with a direct competitor, (b) it causes fatigue affecting primary job performance, or (c) confidential information is misused. Example: An accountant working for Bank A by day and Bank B by night is an actual CoI.</div>
+            <div class="bn-text"><strong>মুনলাইটিং বনাম CoI:</strong> মুনলাইটিং হলো মূল চাকরির পর দ্বিতীয় চাকরি করা। এটি সাধারণত নৈতিক, কিন্তু যদি দ্বিতীয় চাকরি মূল প্রতিষ্ঠানের ক্ষতি করে (প্রতিযোগী, গোপন তথ্য ফাঁস, ক্লান্তি) তাহলে তা স্বার্থের সংঘাতে পরিণত হয়। যেমন: দিনে সিটিজেন ব্যাংক ও রাতে ডাচ-বাংলা ব্যাংকে কাজ — এটি সরাসরি CoI।</div>
+            <div class="example-3d"><i class="fas fa-lightbulb"></i> <strong>Exam-focused example:</strong> A government official’s relative wins a tender due to family connection — actual CoI. Always disclose outside work to avoid CoI.</div>
         </div>
     </div>
 
-    <!-- ========= TAB 2 : Whistle Blowing ========= -->
+    <!-- TAB 2: Whistleblowing Full answer + Snowden -->
     <div id="tab2" class="tab-content">
-        <div class="card-3d">
-            <h2><i class="fas fa-whistle"></i> Whistle Blowing</h2>
-            <div class="eng"><strong>Definition:</strong> Reporting illegal/unethical conduct within an organization to internal or external authorities.</div>
-            <div class="bn"><strong>বাংলা:</strong> হুইসেল ব্লোয়িং হলো প্রতিষ্ঠানের ভেতরে বেআইনি বা অনৈতিক কাজ রিপোর্ট করা।</div>
-            <h3>Internal vs External</h3>
+        <div class="card-premium">
+            <h2><i class="fas fa-bullhorn"></i> Whistle Blowing</h2>
+            <div class="eng-text"><strong>Definition (Long Answer):</strong> Whistleblowing is the voluntary act of reporting illegal, immoral, or illegitimate practices within an organization to internal or external authorities. The whistleblower exposes wrongdoing to protect public interest, often at great personal risk.</div>
+            <div class="bn-text"><strong>বাংলা:</strong> হুইসেল ব্লোয়িং হলো প্রতিষ্ঠানের ভেতরে বেআইনি বা অনৈতিক কার্যকলাপ সম্পর্কে কর্তৃপক্ষ বা গণমাধ্যমকে জানানো। এটি জনস্বার্থ রক্ষার জন্য করা হয়, যদিও হুইসেলব্লোয়ার ব্যক্তিগতভাবে ঝুঁকি নেন।</div>
+
+            <h3>Internal vs External Whistleblowing</h3>
             <div class="grid-2">
-                <div class="info-card"><i class="fas fa-building"></i> <strong>Internal</strong><br>Report to HR/management. Safer.<br><span class="bn">অভ্যন্তরীণ: এইচআর বা উর্ধ্বতনকে জানানো।</span></div>
-                <div class="info-card"><i class="fas fa-globe"></i> <strong>External</strong><br>Media, police, regulators. High risk.<br><span class="bn">বহিঃস্থ: সংবাদমাধ্যম, পুলিশ, নিয়ন্ত্রক সংস্থা।</span></div>
+                <div class="info-block"><i class="fas fa-building"></i> <strong>Internal</strong><br>Reporting to HR, compliance, or senior management. Safer and preferred. Example: Employee reports expense fraud to the ethics committee.</div>
+                <div class="info-block"><i class="fas fa-newspaper"></i> <strong>External</strong><br>Reporting to media, police, regulators. Used when internal channels fail. Example: A factory worker tells environmental agency about toxic dumping.</div>
             </div>
-            <h3>Edward Snowden Case (Real Example)</h3>
-            <div class="eng">NSA contractor leaked classified mass surveillance programs in 2013. Revealed violation of public privacy. Hero vs traitor debate.</div>
-            <div class="bn">এডওয়ার্ড স্নোডেন, এনএসএ ঠিকাদার, ২০১৩ সালে গোপন নজরদারির তথ্য ফাঁস করেন। তিনি জনগণের গোপনীয়তা রক্ষায় সতর্ককারী হিসেবে বিবেচিত হন কিন্তু সরকার তাকে বিশ্বাসঘাতক বলে।</div>
-            <div class="example-glow"><i class="fas fa-exclamation-triangle"></i> External whistleblowing exposes wrongdoing but often leads to prosecution. Organizations need safe internal channels.</div>
+
+            <h3><i class="fas fa-user-secret"></i> Edward Snowden Case – Complete Analysis</h3>
+            <div class="eng-text">Edward Snowden, an NSA contractor in 2013, leaked classified documents revealing that the US National Security Agency was conducting mass surveillance of ordinary citizens' phone calls, emails, and internet activity without warrants. He fled and now lives in exile. Supporters call him a hero for defending privacy; critics label him a traitor for violating secrecy laws. This case demonstrates the extreme consequences of external whistleblowing and highlights the need for robust internal protection mechanisms.</div>
+            <div class="bn-text">এডওয়ার্ড স্নোডেন ২০১৩ সালে এনএসএ'র গোপন নথি ফাঁস করেন। তিনি প্রমাণ করেন যে সরকার সাধারণ নাগরিকদের ফোন, ইমেইল ও অনলাইন কার্যকলাপ গোপনে মনিটরিং করছে। তাকে কেউ বীর (গোপনীয়তা রক্ষায়) আবার কেউ বিশ্বাসঘাতক বলে। এই ঘটনা বহিঃস্থ হুইসেল ব্লোয়িং এর ঝুঁকি ও গুরুত্ব তুলে ধরে।</div>
+            <div class="example-3d"><i class="fas fa-gavel"></i> <strong>Conclusion for exam:</strong> Whistleblowing is ethically justified when there is serious public harm, but legal protections for whistleblowers must be strengthened.</div>
         </div>
     </div>
 
-    <!-- ========= TAB 3 : Intellectual Property & Copyright (Bangladesh + Hasan Ahmed Sojib) ========= -->
+    <!-- TAB 3: IP + Copyright Bangladesh Full Details + Hasan Ahmed Sojib -->
     <div id="tab3" class="tab-content">
-        <div class="card-3d">
-            <h2><i class="far fa-copyright"></i> Intellectual Property & Copyright Act 2023</h2>
-            <div class="eng"><strong>IP Notion:</strong> Creations of the mind (inventions, literature, art) protected by law.</div>
-            <div class="bn">বৌদ্ধিক সম্পত্তি: মানব মনের সৃষ্টি (আবিষ্কার, সাহিত্য, শিল্প) আইনত সুরক্ষিত।</div>
-            <h3>Patent Features</h3>
-            <ul class="list-styled"><li>Exclusive right (20 years)</li><li>Public disclosure</li><li>Territorial</li></ul>
-            <h3>📜 Copyright Act 2023 (Bangladesh)</h3>
-            <div class="eng">- Protects expression, not ideas. <br>- Duration: Author's life + 60 years. <br>- Piracy punishable: fine up to 5 lac BDT and/or 4 years imprisonment.</div>
-            <div class="bn">- প্রকাশভঙ্গি সুরক্ষিত, ধারণা নয়। <br>- মেয়াদ: লেখকের জীবন + ৬০ বছর। <br>- জলদস্যুতা: সর্বোচ্চ ৪ বছর কারাদণ্ড বা ৫ লাখ টাকা জরিমানা।</div>
-            <div class="example-glow">
-                <i class="fas fa-user-astronaut"></i> <strong>Example: Hasan Ahmed Sojib (copyright owner)</strong><br>
-                Hasan Ahmed Sojib, a Bangladeshi writer, publishes a novel in 2025. He holds exclusive rights. Unauthorized photocopy or digital upload = infringement. After his death, copyright remains 60 years for heirs.<br>
-                <span class="bn">হাসান আহমেদ সজীব তাঁর বইয়ের অননুমোদিত কপি বানালে কপিরাইট আইন লঙ্ঘন হবে। তিনি ক্ষতিপূরণ পেতে পারেন এবং অপরাধী শাস্তি পাবে।</span>
+        <div class="card-premium">
+            <h2><i class="far fa-copyright"></i> Intellectual Property & Copyright Act 2023 (Bangladesh)</h2>
+            <div class="eng-text"><strong>Notion of IP:</strong> Intellectual Property refers to creations of the mind: inventions, literary and artistic works, designs, symbols, and software. IP laws give creators exclusive rights to benefit from their work.</div>
+            <div class="bn-text"><strong>মেধাস্বত্বের ধারণা:</strong> বৌদ্ধিক সম্পত্তি হলো মানব মনের সৃষ্টি (আবিষ্কার, সাহিত্য, শিল্প) যা আইনত সুরক্ষিত। স্রষ্টা তার কাজ থেকে অর্থ ও স্বীকৃতি পান।</div>
+
+            <h3>Features of a Patent</h3>
+            <ul class="list-styled"><li><i class="fas fa-crown"></i> Exclusive right (monopoly) for 20 years</li><li><i class="fas fa-clock"></i> Limited term — after 20 years, public can use it</li><li><i class="fas fa-globe"></i> Public disclosure — inventor must share details</li></ul>
+
+            <h3>📜 Copyright Act 2023 of Bangladesh (Key provisions – Exam answer)</h3>
+            <div class="eng-text">
+                - <strong>Protects expression, not ideas</strong>: You cannot copy the exact words of a book, but you can write on the same subject.<br>
+                - <strong>Duration</strong>: Lifetime of the author + 60 years after death.<br>
+                - <strong>Anti-piracy</strong>: Unauthorized reproduction, distribution, or digital sharing is punishable with fine up to BDT 500,000 and/or imprisonment up to 4 years.<br>
+                - <strong>Automatic protection</strong>: No registration required, but registration provides legal evidence.
+            </div>
+            <div class="bn-text">
+                - <strong>প্রকাশভঙ্গি সুরক্ষিত, ধারণা নয়</strong>: হ্যারি পটারের বাক্য চুরি করা যাবে না, কিন্তু নিজস্ব উইজার্ড গল্প লেখা যাবে।<br>
+                - <strong>মেয়াদ</strong>: স্রষ্টার জীবন + মৃত্যুর ৬০ বছর পর্যন্ত।<br>
+                - <strong>পাইরেসি প্রতিরোধ</strong>: অনুমতি ছাড়া কপি, বিতরণ বা ডিজিটাল শেয়ার করলে সর্বোচ্চ ৪ বছরের জেল বা ৫ লাখ টাকা জরিমানা।<br>
+                - <strong>স্বয়ংক্রিয় সুরক্ষা</strong>: নিবন্ধন আবশ্যক নয়, তবে নিবন্ধন প্রমাণ হিসেবে কাজ করে।
+            </div>
+
+            <div class="example-3d">
+                <i class="fas fa-user-astronaut"></i> <strong>Example: Hasan Ahmed Sojib (copyright holder)</strong><br>
+                <span class="eng-text">Hasan Ahmed Sojib writes a novel "Shundorer Pata" in 2025. Under Copyright Act 2023, he automatically holds exclusive rights. If someone photocopies the book and sells it without permission, that is infringement. He can sue for damages and the infringer may face imprisonment. After his death, his heirs will own the copyright for 60 more years. This example shows how the law protects creators in Bangladesh.</span><br>
+                <span class="bn-text">হাসান আহমেদ সজীব ২০২৫ সালে একটি উপন্যাস লেখেন। কপিরাইট আইন ২০২৩ অনুযায়ী তিনি স্বয়ংক্রিয় মালিকানা পান। কেউ অনুমতি ছাড়া বই ফটোকপি করে বিক্রি করলে তা লঙ্ঘন। তিনি ক্ষতিপূরণ ও ফৌজদারি মামলা করতে পারেন। তাঁর মৃত্যুর ৬০ বছর পর্যন্ত উত্তরাধিকারী স্বত্ব ভোগ করবেন।</span>
             </div>
         </div>
     </div>
 
-    <!-- ========= TAB 4 : Ethical Theories ========= -->
+    <!-- TAB 4: Ethical Theories full -->
     <div id="tab4" class="tab-content">
-        <div class="card-3d">
-            <h2><i class="fas fa-gem"></i> Ethical Theories</h2>
-            <h3>Utilitarianism (Greatest Good)</h3>
-            <div class="eng">An action is right if it maximizes happiness for the greatest number. Consequentialist.</div>
-            <div class="bn">উপযোগিতাবাদ: সর্বাধিক সংখ্যক মানুষের জন্য সর্বাধিক সুখ নিশ্চিত করে এমন কাজ নৈতিক।</div>
-            <div class="info-card">Example: Reducing all salaries by 10% instead of firing 50 people – good for majority.</div>
-            <h3>Ethical Relativism</h3>
-            <div class="eng">Right/wrong depends on culture. No universal moral truth.</div>
-            <div class="bn">নৈতিক আপেক্ষিকতাবাদ: সঠিক-ভুল সংস্কৃতি নির্ভরশীল। কোনো বিশ্বজনীন নীতি নেই।</div>
-            <div class="example-glow">Example: Gift giving is ethical in some cultures but bribery in others.<br><span class="bn">কিছু দেশে উপহার দেওয়া শিষ্টাচার, অন্যদেশে ঘুষ।</span></div>
+        <div class="card-premium">
+            <h2><i class="fas fa-gem"></i> Ethical Theories: Utilitarianism & Relativism</h2>
+            <h3><i class="fas fa-chart-simple"></i> Utilitarianism (Greatest Good for Greatest Number)</h3>
+            <div class="eng-text"><strong>Long answer:</strong> Utilitarianism is a consequentialist theory. An action is morally right if it produces the greatest balance of happiness or benefit for the majority of people. It does not care about motives, only outcomes. Example: A factory facing losses can either fire 100 workers or reduce everyone's salary by 10%. Utilitarianism favors salary reduction because it saves 100 families from total income loss — the greatest good for the greatest number.</div>
+            <div class="bn-text"><strong>উপযোগিতাবাদ:</strong> এটি ফলাফলভিত্তিক নীতি। কোনো কাজ নৈতিক হবে যদি তা সর্বাধিক সংখ্যক মানুষের জন্য সর্বোচ্চ সুখ বয়ে আনে। উদাহরণ: কারখানা লোকসানে ১০০ জন বরখাস্ত বনাম সবার বেতন ১০% কমানো — বেতন কমানো অধিক নৈতিক (সংখ্যাগরিষ্ঠের ভালো)।</div>
+
+            <h3><i class="fas fa-globe-asia"></i> Ethical Relativism</h3>
+            <div class="eng-text"><strong>Long answer:</strong> Ethical relativism argues that there are no universal moral truths. Right and wrong depend on the culture, society, or individual context. What is ethical in one country may be unethical in another. Example: In some cultures, giving a small gift to a government officer to speed up a process is considered normal etiquette. In many Western countries, the same act is illegal bribery. Relativism says both can be right within their own framework — but critics argue it can justify harmful practices.</div>
+            <div class="bn-text"><strong>নৈতিক আপেক্ষিকতাবাদ:</strong> এটি বলে — কোনো সার্বিক নৈতিক সত্য নেই। সঠিক-ভুল সংস্কৃতি ও সমাজভেদে পরিবর্তিত হয়। যেমন: কিছু দেশে কর্মকর্তাকে উপহার দেওয়া শিষ্টাচার, অন্যদেশে তা ঘুষ ও অপরাধ। আপেক্ষিকতাবাদ উভয়কেই নিজ সংস্কৃতিতে সঠিক বলে, তবে সমালোচকরা বলেন এটি ক্ষতিকর প্রথাকেও বাহানা দিতে পারে।</div>
+            <div class="example-3d"><i class="fas fa-chalkboard-user"></i> Exam tip: Compare both — Utilitarianism provides objective calculation, Relativism respects diversity but may lack moral absolutes.</div>
         </div>
     </div>
 
-    <!-- ========= TAB 5 : Computer Crimes ========= -->
+    <!-- TAB 5: Computer Crimes full -->
     <div id="tab5" class="tab-content">
-        <div class="card-3d">
-            <h2><i class="fas fa-skull-crossbones"></i> Computer Crimes & Prevention</h2>
-            <h3>Motives</h3>
+        <div class="card-premium">
+            <h2><i class="fas fa-skull-crossbones"></i> Computer Crimes & Prevention (Long Answer)</h2>
+            <h3>Four Main Motives</h3>
             <div class="grid-2">
-                <div class="info-card">💰 Financial Gain</div>
-                <div class="info-card">😤 Revenge</div>
-                <div class="info-card">🎮 Thrill/Ego</div>
-                <div class="info-card">🕵️ Espionage</div>
+                <div class="info-block">💰 <strong>Financial gain</strong> – hacking banks, ransomware, credit card theft.</div>
+                <div class="info-block">😤 <strong>Revenge</strong> – fired employee deletes data.</div>
+                <div class="info-block">🎮 <strong>Thrill/Ego</strong> – hacking for fun or reputation.</div>
+                <div class="info-block">🕵️ <strong>Espionage</strong> – stealing trade secrets or state intelligence.</div>
             </div>
-            <h3>5 Prevention Strategies</h3>
+            <h3>Five Prevention Strategies (Detailed)</h3>
             <ul class="list-styled">
-                <li><strong>Strong Passwords + 2FA</strong> – দ্বি-স্তরের প্রমাণীকরণ</li>
-                <li><strong>Antivirus & Firewall</strong> – আপডেটেড নিরাপত্তা সফটওয়্যার</li>
-                <li><strong>Regular Backup</strong> – নিয়মিত ব্যাকআপ (অফলাইন/ক্লাউড)</li>
-                <li><strong>Access Control</strong> – ন্যূনতম অনুমতি নীতি</li>
-                <li><strong>Employee Training</strong> – ফিশিং সচেতনতা</li>
+                <li><strong>Strong Passwords + Two-Factor Authentication (2FA):</strong> Use 12+ characters, OTP or biometric. Makes hacking much harder.</li>
+                <li><strong>Antivirus & Firewall:</strong> Updated security software blocks malware and unauthorized network access.</li>
+                <li><strong>Regular Data Backup:</strong> Keep offline or cloud backups. If ransomware hits, restore without paying.</li>
+                <li><strong>Access Control (Least Privilege):</strong> Employees only see files needed for their job. Limit sensitive data access.</li>
+                <li><strong>Employee Training (Phishing Awareness):</strong> 90% of breaches start with phishing emails. Train staff to verify sender, hover links, never share passwords.</li>
             </ul>
-            <div class="example-glow">Example: In Dhaka, a phishing attack cost a company 2 crore BDT. After 2FA and training, attacks stopped.</div>
+            <div class="eng-text"><strong>Real case:</strong> In 2022, a Dhaka-based RMG factory lost 2 crore BDT due to a phishing email. After implementing 2FA and monthly security drills, no further incidents occurred.</div>
+            <div class="bn-text"><strong>বাংলাদেশের উদাহরণ:</strong> ঢাকার একটি পোশাক কারখানা ফিশিং ইমেইলের কারণে ২ কোটি টাকা হারায়। পরে 2FA ও প্রশিক্ষণ চালু করলে আর হামলা সফল হয়নি।</div>
         </div>
     </div>
 
-    <!-- Long answer model (exam special) -->
-    <div class="card-3d" style="margin-top: 0.5rem;">
-        <h3><i class="fas fa-pen-alt"></i> 📝 Sample Long Answer (Exam Model)</h3>
-        <div class="eng"><strong>Q:</strong> Define Conflict of Interest, its types, and differentiate from Moonlighting. Discuss Whistleblowing with the Snowden case.</div>
-        <div class="bn"><strong>প্রশ্ন:</strong> স্বার্থের সংঘাতের সংজ্ঞা, প্রকারভেদ ও মুনলাইটিং থেকে পার্থক্য। হুইসেল ব্লোয়িং ও স্নোডেন কেস বিশ্লেষণ করুন।</div>
-        <div class="example-glow" style="background: rgba(0,0,0,0.4);">
-            <strong>Answer (English):</strong> Conflict of Interest is a situation where personal gain conflicts with professional duty. Its three types are actual, potential, and apparent. Moonlighting is a second job; it becomes CoI if it harms the primary employer. Whistleblowing means exposing wrongdoing. Edward Snowden externally leaked mass surveillance data, highlighting the tension between state secrecy and public right to privacy. Organizations should establish protected internal reporting channels.<br><br>
-            <strong>বাংলা উত্তর:</strong> স্বার্থের সংঘাত মানে ব্যক্তিগত লাভ ও পেশাগত দায়িত্বের দ্বন্দ্ব। এর প্রকার: বাস্তব, সম্ভাব্য ও আপাত। মুনলাইটিং মূলত দ্বিতীয় চাকরি; এটি CoI হয় যখন প্রথম চাকরির ক্ষতি করে। হুইসেল ব্লোয়িং হল অন্যায় প্রকাশ করা। স্নোডেন বহিঃস্থ হুইসেল ব্লোয়ার হিসেবে গণ নজরদারির তথ্য ফাঁস করেন। এতে জনগণের গোপনীয়তা ও রাষ্ট্রীয় গোপনীয়তার দ্বন্দ্ব দেখা যায়। প্রতিষ্ঠানগুলোর অভ্যন্তরীণ নিরাপদ রিপোর্টিং ব্যবস্থা তৈরি করা জরুরি।
+    <!-- LONG ANSWER MODEL (exam special) -->
+    <div class="card-premium" style="margin-top: 0.5rem;">
+        <h3><i class="fas fa-pen-fancy"></i> 📝 Exam Model Long Question & Answer (English + Bengali)</h3>
+        <div class="eng-text"><strong>Q1:</strong> Define Conflict of Interest, explain its types, differentiate from Moonlighting. Discuss Whistleblowing with Edward Snowden case.</div>
+        <div class="bn-text"><strong>প্রশ্ন:</strong> স্বার্থের সংঘাতের সংজ্ঞা, প্রকার ও মুনলাইটিং থেকে পার্থক্য। হুইসেল ব্লোয়িং ও স্নোডেন ঘটনা বিশ্লেষণ করুন।</div>
+        <div class="example-3d" style="background: rgba(0,0,0,0.5);">
+            <strong>Full Answer (English):</strong> Conflict of Interest (CoI) is a clash between personal interest and professional duty. Types: actual (current), potential (future), apparent (perceived). Moonlighting is a second job; it becomes CoI if it harms primary employer (competitor, exhaustion). Whistleblowing is exposing wrongdoing. Edward Snowden externally leaked mass surveillance, revealing privacy violations. He faced exile, highlighting the need for internal whistleblower protection. Organizations must establish safe reporting channels.<br><br>
+            <strong>বাংলা উত্তর:</strong> স্বার্থের সংঘাত (CoI) হলো ব্যক্তিগত ও পেশাগত স্বার্থের দ্বন্দ্ব। প্রকার: বাস্তব, সম্ভাব্য ও আপাত। মুনলাইটিং দ্বিতীয় চাকরি; এটি CoI হয় যদি প্রথম চাকরির ক্ষতি করে। হুইসেল ব্লোয়িং অন্যায় প্রকাশ। স্নোডেন বহিঃস্থ হুইসেলব্লোয়ার হিসেবে গণ নজরদারির তথ্য ফাঁস করেন। তার এই কাজ গোপনীয়তা রক্ষায় গুরুত্বপূর্ণ হলেও তিনি নির্বাসিত। প্রতিষ্ঠানগুলোর অভ্যন্তরীণ নিরাপদ রিপোর্টিং ব্যবস্থা জরুরি।
         </div>
-        <div class="eng" style="margin-top: 0.8rem;"><strong>Copyright long answer (Bangladesh):</strong> Under the Copyright Act 2023, Hasan Ahmed Sojib's novel is protected for his life + 60 years. Piracy invites fine/imprisonment. Digital piracy also illegal.</div>
+        <div class="eng-text" style="margin-top: 1rem;"><strong>Q2:</strong> Explain Copyright Act 2023 of Bangladesh with an example of a creator (Hasan Ahmed Sojib).</div>
+        <div class="bn-text"><strong>উত্তর:</strong> কপিরাইট আইন ২০২৩ সৃষ্টিকর্তার মৃত্যুর ৬০ বছর পর্যন্ত সুরক্ষা দেয়। হাসান আহমেদ সজীবের লেখা উপন্যাসের অননুমোদিত কপি বানানো পাইরেসি, যার শাস্তি ৪ বছর জেল বা ৫ লাখ টাকা জরিমানা।</div>
     </div>
 
-    <div class="footer-credit">
-        <i class="fas fa-crown"></i> Developed by <strong>Hasan Ahmed Sojib</strong> | 3D Interactive UI | Lighting + Bilingual | Exam-Ready 100%<br>
-        <span style="font-size: 0.75rem;">✓ All topics: CoI, Whistleblowing, IP, Utilitarianism, Relativism, Cyber Crimes ✓ Fully Responsive</span>
+    <div class="footer">
+        <i class="fas fa-crown"></i> Developed by <strong>Hasan Ahmed Sojib</strong> |<br>
+        <span style="font-size: 0.7rem;">✓ All topics covered with long English answers & Bengali explanations ✓ Animation mood ✓ 100% exam preparation</span>
     </div>
 </div>
 
 <script>
-    // mouse lighting effect
-    const lighting = document.getElementById('lighting');
+    // Dynamic lighting based on mouse movement
+    const lightRay = document.getElementById('lightRay');
     document.addEventListener('mousemove', (e) => {
         const x = (e.clientX / window.innerWidth) * 100;
         const y = (e.clientY / window.innerHeight) * 100;
-        lighting.style.setProperty('--x', `${x}%`);
-        lighting.style.setProperty('--y', `${y}%`);
+        lightRay.style.setProperty('--x', `${x}%`);
+        lightRay.style.setProperty('--y', `${y}%`);
     });
 
-    // tab switching
+    // Tab switching
     const btns = document.querySelectorAll('.tab-btn');
     const contents = document.querySelectorAll('.tab-content');
     function switchTab(tabId) {
@@ -415,8 +411,8 @@
         if (document.getElementById(hash)) switchTab(hash);
     }
 
-    // 3D tilt effect on cards (subtle mouse follow)
-    const cards = document.querySelectorAll('.card-3d');
+    // 3D tilt effect on cards
+    const cards = document.querySelectorAll('.card-premium');
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
@@ -424,10 +420,10 @@
             const y = (e.clientY - rect.top) / rect.height - 0.5;
             const rotateX = y * 4;
             const rotateY = x * 4;
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+            card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
         });
         card.addEventListener('mouseleave', () => {
-            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)`;
+            card.style.transform = `perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0px)`;
         });
     });
 </script>
